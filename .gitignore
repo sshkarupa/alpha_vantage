@@ -6,6 +6,12 @@
 /pkg/
 /spec/reports/
 /tmp/
-
-# rspec failure tracking
+.rbnext/
+.env
+.rspec
+.ruby-version
+*.gem
 .rspec_status
+gemfiles/*.lock
+Gemfile.lock
+Gemfile.local

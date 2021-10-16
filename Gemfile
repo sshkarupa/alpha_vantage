@@ -2,11 +2,12 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in alpha_vantage.gemspec
 gemspec
 
-gem "rake", "~> 13.0"
+gem "pry-byebug", platform: :mri
+gem "dotenv"
 
-gem "rspec", "~> 3.0"
+eval_gemfile "gemfiles/rubocop.gemfile"
 
-gem "rubocop", "~> 0.80"
+local_gemfile = "#{File.dirname(__FILE__)}/Gemfile.local"
+eval(File.read(local_gemfile)) if File.exist?(local_gemfile)  # rubocop:disable Security/Eval
