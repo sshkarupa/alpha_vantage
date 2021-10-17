@@ -6,5 +6,11 @@ require "bundler/setup"
 require "alpha_vantage"
 require "dotenv/load"
 
+if ENV["ALPHAVANTAGE_API_KEY"]
+  AlphaVantage.configure do |config|
+    config.api_key = ENV["ALPHAVANTAGE_API_KEY"]
+  end
+end
+
 require "pry"
 Pry.start
