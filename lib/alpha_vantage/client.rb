@@ -40,7 +40,7 @@ module AlphaVantage
       CSV.parse(raw_data)
     rescue CSV::MalformedCSVError => _e
       error_response = JSON.parse(raw_data)
-      message = error_response['Error Message'] || error_response
+      message = error_response["Error Message"] || error_response
       raise AlphaVantage::Error, message
     end
 
@@ -51,7 +51,7 @@ module AlphaVantage
       response = Net::HTTP.get_response(uri)
       response.body if response.is_a?(Net::HTTPSuccess)
     rescue *ALL_NET_HTTP_ERRORS => e
-      raise AlphaVantage::Error, "#{e.message}"
+      raise AlphaVantage::Error, e.message
     end
 
     def uri

@@ -15,7 +15,7 @@ module AlphaVantage
 
       refine ::Hash do
         def deep_transform
-          self.class[self.map { |k, v| [k.to_s.normalize, v.deep_transform] }]
+          self.class[map { |k, v| [k.to_s.normalize, v.deep_transform] }]
         end
       end
 
