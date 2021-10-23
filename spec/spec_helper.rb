@@ -1,6 +1,19 @@
 # frozen_string_literal: true
 
 require "alpha_vantage"
+require "webmock/rspec"
+
+begin
+  require "pry-byebug"
+rescue LoadError
+end
+
+ENV["RUBY_NEXT_WARN"] = "false"
+ENV["RUBY_NEXT_EDGE"] = "1"
+ENV["RUBY_NEXT_PROPOSED"] = "1"
+require "ruby-next/language/runtime" unless ENV["CI"]
+
+ENV["RACK_ENV"] = "test"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
