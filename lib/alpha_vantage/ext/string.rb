@@ -4,6 +4,12 @@ module AlphaVantage
   module Ext
     module String
       refine ::String do
+        require "date"
+
+        def normalize
+          valid_date? ? self : sanitize.underscore.to_sym
+        end
+
         def underscore
           gsub(/::/, "/")
             .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
@@ -12,18 +18,12 @@ module AlphaVantage
             .downcase
         end
 
-        def normalize
-          return self if is_date?
-
-          sanitize.underscore.to_sym
-        end
-
         def sanitize
           tr(".():/", "").gsub(/^\d+.?\s/, "").tr(" ", "_")
         end
 
-        def is_date?
-          !/(\d{4}-\d{2}-\d{2})/.match(self).nil?
+        def valid_date?
+          !!Date.strptime(self, "%Y-%m-%d") rescue false # rubocop:disable Style/RescueModifier
         end
       end
 
