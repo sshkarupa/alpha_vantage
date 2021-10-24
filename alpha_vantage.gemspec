@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "A ruby wrapper for Alpha Vantage API"
   spec.homepage = "https://github.com/sshkarupa/alpha_vantage"
   spec.license = "MIT"
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.6.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
@@ -22,7 +23,6 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.required_ruby_version = ">= 2.6"
 
   # When gem is installed from source, we add `ruby-next` as a dependency
   # to auto-transpile source files during the first load
@@ -36,6 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", ">= 3.0.0"
   spec.add_development_dependency "webmock", "~> 3.14"
   spec.add_development_dependency "rake", ">= 13.0.0"
+  spec.add_development_dependency "ruby-next", "~> 0.13.1"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html

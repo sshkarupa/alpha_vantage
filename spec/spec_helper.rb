@@ -10,6 +10,7 @@ end
 
 ENV["RUBY_NEXT_WARN"] = "false"
 ENV["RUBY_NEXT_EDGE"] = "1"
+ENV["RUBY_NEXT_PROPOSED"] = "1"
 require "ruby-next/language/runtime" unless ENV["CI"]
 
 ENV["RACK_ENV"] = "test"

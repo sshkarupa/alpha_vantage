@@ -46,6 +46,10 @@ module AlphaVantage
 
     private
 
+    def parse(...)
+      CSV.parse(...)
+    end
+
     def request
       uri.query = URI.encode_www_form(default_params.merge(**opts))
       response = Net::HTTP.get_response(uri)
