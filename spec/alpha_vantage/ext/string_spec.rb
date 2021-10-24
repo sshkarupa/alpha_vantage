@@ -53,7 +53,7 @@ RSpec.describe AlphaVantage::Ext::String do
 
     context "when invalid date" do
       it "returns false" do
-        %w[2021-12-32 2001-13-02 12-101-201 ].each do |str|
+        %w[2021-12-32 2001-13-02 12-101-201].each do |str|
           expect(str.valid_date?).to be_falsey
         end
       end

@@ -6,7 +6,7 @@ RSpec.describe AlphaVantage::Ext::Hash do
   using AlphaVantage::Ext::Hash
 
   describe "#to_struct" do
-    let(:source) { Hash[a: 1, b: 2] }
+    let(:source) { {a: 1, b: 2} }
 
     it "returns a struct" do
       struct = source.to_struct

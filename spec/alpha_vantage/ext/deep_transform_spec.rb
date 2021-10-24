@@ -18,7 +18,7 @@ RSpec.describe AlphaVantage::Ext::DeepTranform do
     let(:result) do
       {
         first: {
-          b: { one: "123. hello", two: "world"},
+          b: {one: "123. hello", two: "world"},
           c: {one: "12345", two: "12345"}
         },
         second: [{one: "hello"}, {two: "world"}]
