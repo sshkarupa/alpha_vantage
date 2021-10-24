@@ -5,7 +5,6 @@ source "https://rubygems.org"
 gemspec
 
 gem "pry-byebug", platform: :mri
-gem "dotenv"
 
 eval_gemfile "gemfiles/rubocop.gemfile"
 
