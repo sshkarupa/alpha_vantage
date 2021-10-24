@@ -18,18 +18,15 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = spec.homepage
   spec.metadata["changelog_uri"] = spec.homepage
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files = Dir.chdir(File.expand_path(__dir__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features)/}) }
-  end
+  spec.files = Dir.glob("lib/**/*") + Dir.glob("lib/.rbnext/**/*") + Dir.glob("bin/**/*") +
+    %w[README.md LICENSE.txt CHANGELOG.md]
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   # When gem is installed from source, we add `ruby-next` as a dependency
   # to auto-transpile source files during the first load
-  if ENV["RELEASING_GEM"].nil? && File.directory?(File.join(__dir__, ".git"))
+  if ENV["RELEASING_ALPHAVANTAGE"].nil? && File.directory?(File.join(__dir__, ".git"))
     spec.add_runtime_dependency "ruby-next", "~> 0.12.0"
   else
     spec.add_runtime_dependency "ruby-next-core", "~> 0.12.0"

@@ -12,6 +12,8 @@ require_relative "alpha_vantage/ext/hash"
 require_relative "alpha_vantage/client"
 
 module AlphaVantage
+  using RubyNext
+
   class Error < StandardError; end
 
   class ApiKeyMissing < Error; end
