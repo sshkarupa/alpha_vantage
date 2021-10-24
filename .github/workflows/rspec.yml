@@ -24,7 +24,12 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
         bundler: 2.2.15
         # bundler-cache: true
+    - name: Install Ruby deps
+      run: |
+        bundle install --jobs 4 --retry 3
     - name: Run Ruby Next
-      run: bundle exec rake nextify
+      run:  |
+        bundle exec rake nextify
     - name: Run RSpec
-      run: bundle exec rake spec
+      run: |
+        bundle exec rake spec
