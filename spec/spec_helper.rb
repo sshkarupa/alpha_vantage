@@ -20,4 +20,10 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.before do
+    AlphaVantage.configure do |c|
+      c.api_key = "_api_key_"
+    end
+  end
 end
