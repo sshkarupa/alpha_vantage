@@ -5,11 +5,6 @@ require "rspec/core/rake_task"
 
 RSpec::Core::RakeTask.new(:spec)
 
-desc "Run Ruby Next nextify"
-task :nextify do
-  sh "bundle exec ruby-next nextify -V"
-end
-
 begin
   require "rubocop/rake_task"
   RuboCop::RakeTask.new

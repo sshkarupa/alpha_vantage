@@ -7,7 +7,6 @@ require "csv"
 require "json"
 
 module AlphaVantage
-  using RubyNext
   using AlphaVantage::Ext::DeepTranform
   using AlphaVantage::Ext::Hash
 
@@ -32,7 +31,9 @@ module AlphaVantage
     end
 
     def json
-      JSON.parse(request).then(&:deep_transform).then(&:to_struct)
+      JSON.parse(request)
+        .then(&:deep_transform)
+        .then(&:to_struct)
     end
 
     def csv
@@ -45,10 +46,6 @@ module AlphaVantage
     end
 
     private
-
-    def parse(...)
-      CSV.parse(...)
-    end
 
     def request
       uri.query = URI.encode_www_form(default_params.merge(**opts))

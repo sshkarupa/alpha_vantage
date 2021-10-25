@@ -17,5 +17,5 @@ jobs:
     - name: Lint Ruby code with RuboCop
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3
-        bundle exec rubocop
+        bundle install --gemfile gemfiles/rubocop.gemfile --jobs 4 --retry 3
+        bundle exec --gemfile gemfiles/rubocop.gemfile rubocop

@@ -1,7 +1,6 @@
 
 require:
   - standard/cop/block_single_line_braces
-  - ruby-next/rubocop
 
 inherit_gem:
   standard: config/base.yml
@@ -12,10 +11,9 @@ AllCops:
     - 'tmp/**/*'
     - 'Gemfile'
     - 'gemfiles/**/*'
-    - 'lib/.rbnext/**/*'
   DisplayCopNames: true
   SuggestExtensions: false
-  TargetRubyVersion: next
+  TargetRubyVersion: 2.6
 
 Standard/BlockSingleLineBraces:
   Enabled: false

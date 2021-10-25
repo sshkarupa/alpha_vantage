@@ -6,7 +6,6 @@
 /pkg/
 /spec/reports/
 /tmp/
-.rbnext/
 .env
 .rspec
 .ruby-version
