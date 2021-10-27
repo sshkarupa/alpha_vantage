@@ -5,7 +5,7 @@ module AlphaVantage
     module Hash
       refine ::Hash do
         def to_struct
-          Struct.new(*keys).new(*values)
+          keys.empty? ? self : Struct.new(*keys).new(*values)
         end
       end
 
