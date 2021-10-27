@@ -6,6 +6,7 @@ require_relative "alpha_vantage/ext/string"
 require_relative "alpha_vantage/ext/hash"
 
 require_relative "alpha_vantage/client"
+require_relative "alpha_vantage/time_series"
 
 module AlphaVantage
   class Error < StandardError; end

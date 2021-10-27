@@ -1,0 +1,28 @@
+---
+- :symbol: TSCO.LON
+  :name: Tesco PLC
+  :type: Equity
+  :region: United Kingdom
+  :market_open: '08:00'
+  :market_close: '16:30'
+  :timezone: UTC+01
+  :currency: GBX
+  :match_score: '0.7273'
+- :symbol: TSCDF
+  :name: Tesco plc
+  :type: Equity
+  :region: United States
+  :market_open: '09:30'
+  :market_close: '16:00'
+  :timezone: UTC-04
+  :currency: USD
+  :match_score: '0.7143'
+- :symbol: TSCDY
+  :name: Tesco plc
+  :type: Equity
+  :region: United States
+  :market_open: '09:30'
+  :market_close: '16:00'
+  :timezone: UTC-04
+  :currency: USD
+  :match_score: '0.7143'
