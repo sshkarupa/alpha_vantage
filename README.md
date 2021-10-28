@@ -1,8 +1,7 @@
+[![Build](https://github.com/sshkarupa/alpha_vantage/workflows/Build/badge.svg)](https://github.com/sshkarupa/alpha_vantage/actions)
 # AlphaVantage
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/alpha_vantage`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A ruby wrapper for [Alpha VAntage API](https://www.alphavantage.co/documentation/).
 
 ## Installation
 
@@ -22,7 +21,48 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The library needs to be configured with your api key which you can obtain from https://www.alphavantage.co/support/#api-key.
+If you are using Rails, you can put this code into an initializer.
+
+```ruby
+require "alpha_vantage"
+
+AlphaVantage.configure do |config|
+  config.api_key = "your-api-key"
+end
+```
+
+### Stock Time Series
+
+```ruby
+search = AlphaVantage::TimeSeries.search(keywords: "tesco")
+
+time_series = AlphaVantage::TimeSeries.new(symbol: "IBM")
+
+timeseries.intraday(interval: "60m")
+```
+
+### Fundamental data
+
+### Forex
+
+
+### Cryptocurrencies
+
+
+### Economic Indicators
+
+
+### Technical Indicators
+
+### Sector
+
+This class returns the realtime and historical sector performances calculated from S&P500 incumbents.
+
+```ruby
+sector = AlphaVantage::Sector.new
+```
+
 
 ## Development
 

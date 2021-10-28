@@ -17,7 +17,7 @@ module AlphaVantage
     private
 
     def validate(params)
-      params.each { |key, value| validate_type(key, value) if VALID_VALUES.keys.include?(key) }
+      params.each { |key, value| validate_type(key, value) if VALID_VALUES.key?(key) }
     end
 
     def validate_type(type, value)
