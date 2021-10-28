@@ -3,7 +3,9 @@
 require "spec_helper"
 
 RSpec.describe AlphaVantage::TimeSeries do
-  subject(:time_series) { described_class.new(symbol: symbol) }
+  subject(:time_series) { described_class.new(symbol: "IBM") }
+
+  let(:base_query) { {apikey: "_api_key_", symbol: "IBM", datatype: "json"} }
 
   describe ".search" do
     let!(:body) { open_fixture_file("time_series/search.json") }
@@ -20,7 +22,24 @@ RSpec.describe AlphaVantage::TimeSeries do
     end
   end
 
-  describe "#intraday"
+  describe "#intraday" do
+    let!(:body) { open_fixture_file("time_series/intraday.json") }
+    let!(:result) { yaml_fixture_file("time_series/intraday.yml") }
+    let(:query) do
+      base_query.merge(function: "TIME_SERIES_INTRADAY", interval: "5min", adjusted: true, outputsize: "compact")
+    end
+
+    before do
+      stub_request(:get, "https://www.alphavantage.co/query")
+        .with(query: query)
+        .to_return(body: body, headers: {"Content-Type" => "application/json"})
+    end
+
+    it "returns an intraday data" do
+      expect(time_series.intraday.time_series_5min).to match_array(result)
+    end
+  end
+
   describe "#daily"
   describe "#weekly"
   describe "#monthly"

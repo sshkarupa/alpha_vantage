@@ -5,6 +5,8 @@ require_relative "alpha_vantage/ext/deep_transform"
 require_relative "alpha_vantage/ext/string"
 require_relative "alpha_vantage/ext/hash"
 
+require_relative "alpha_vantage/validations"
+
 require_relative "alpha_vantage/client"
 require_relative "alpha_vantage/time_series"
 
@@ -12,6 +14,8 @@ module AlphaVantage
   class Error < StandardError; end
 
   class ApiKeyMissing < Error; end
+
+  class ArgumentError < Error; end
 
   class << self
     def config
