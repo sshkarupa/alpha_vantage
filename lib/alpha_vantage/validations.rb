@@ -3,7 +3,7 @@
 module AlphaVantage
   module Validations
     VALID_SLICES = (1..2).map do |year|
-      (1..12).map { |month| "year#{year}month#{month}".to_sym }
+      (1..12).map { |month| "year#{year}month#{month}" }
     end.flatten.freeze
 
     VALID_VALUES = {
