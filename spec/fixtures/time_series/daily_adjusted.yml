@@ -1,0 +1,28 @@
+---
+'2021-10-29':
+  :open: '125.43'
+  :high: '126.32'
+  :low: '124.91'
+  :close: '125.1'
+  :adjusted_close: '125.1'
+  :volume: '5916789'
+  :dividend_amount: '0.0000'
+  :split_coefficient: '1.0'
+'2021-10-28':
+  :open: '125.17'
+  :high: '126.31'
+  :low: '124.62'
+  :close: '125.84'
+  :adjusted_close: '125.84'
+  :volume: '6503003'
+  :dividend_amount: '0.0000'
+  :split_coefficient: '1.0'
+'2021-10-27':
+  :open: '127.44'
+  :high: '127.88'
+  :low: '125.01'
+  :close: '125.17'
+  :adjusted_close: '125.17'
+  :volume: '6973432'
+  :dividend_amount: '0.0000'
+  :split_coefficient: '1.0'

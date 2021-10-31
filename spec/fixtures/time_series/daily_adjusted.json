@@ -1,0 +1,41 @@
+{
+  "Meta Data": {
+    "1. Information": "Daily Time Series with Splits and Dividend Events",
+    "2. Symbol": "IBM",
+    "3. Last Refreshed": "2021-10-29",
+    "4. Output Size": "Compact",
+    "5. Time Zone": "US/Eastern"
+  },
+  "Time Series (Daily)": {
+    "2021-10-29": {
+      "1. open": "125.43",
+      "2. high": "126.32",
+      "3. low": "124.91",
+      "4. close": "125.1",
+      "5. adjusted close": "125.1",
+      "6. volume": "5916789",
+      "7. dividend amount": "0.0000",
+      "8. split coefficient": "1.0"
+    },
+    "2021-10-28": {
+      "1. open": "125.17",
+      "2. high": "126.31",
+      "3. low": "124.62",
+      "4. close": "125.84",
+      "5. adjusted close": "125.84",
+      "6. volume": "6503003",
+      "7. dividend amount": "0.0000",
+      "8. split coefficient": "1.0"
+    },
+    "2021-10-27": {
+      "1. open": "127.44",
+      "2. high": "127.88",
+      "3. low": "125.01",
+      "4. close": "125.17",
+      "5. adjusted close": "125.17",
+      "6. volume": "6973432",
+      "7. dividend amount": "0.0000",
+      "8. split coefficient": "1.0"
+    }
+  }
+}
