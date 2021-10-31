@@ -40,6 +40,27 @@ RSpec.describe AlphaVantage::TimeSeries do
     end
   end
 
+  describe "#intraday_extended" do
+    let!(:body) { read_fixture_file("time_series/intraday_ext.csv") }
+    let!(:result) { CSV.parse(body) }
+    let(:query) do
+      base_query.merge(
+        function: "TIME_SERIES_INTRADAY_EXTENDED", interval: "5min", adjusted: true, outputsize: "compact",
+        datatype: "csv", slice: "year1month1"
+      )
+    end
+
+    before do
+      stub_request(:get, "https://www.alphavantage.co/query")
+        .with(query: query)
+        .to_return(body: body, headers: {})
+    end
+
+    it "returns an intraday data" do
+      expect(time_series.intraday_extended).to match_array(result)
+    end
+  end
+
   describe "#daily"
   describe "#weekly"
   describe "#monthly"

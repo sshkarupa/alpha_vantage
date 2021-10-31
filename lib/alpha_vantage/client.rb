@@ -21,7 +21,7 @@ module AlphaVantage
       ::Net::ProtocolError
     ].freeze
 
-    def self.get(datatype: :json, **opts)
+    def self.get(datatype: "json", **opts)
       new(datatype: datatype, **opts).public_send(datatype)
     end
 
